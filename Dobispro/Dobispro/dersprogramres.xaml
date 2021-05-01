@@ -1,0 +1,19 @@
+﻿<UserControl xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"  x:Class="Dobispro.dersprogramres"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Dobispro"
+             xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" 
+             mc:Ignorable="d" 
+             d:DesignHeight="768" d:DesignWidth="1024" Background="#FF68739B">
+    <Grid>
+        <dxlc:Tile x:Name="geri" Width="150" Height="150"  Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" PreviewMouseDown="geri_PreviewMouseDown"   >
+            <dxlc:Tile.Background>
+                <ImageBrush ImageSource="images/back.png"/>
+            </dxlc:Tile.Background>
+        </dxlc:Tile>
+        <ComboBox x:Name="cmbSinif" Padding="5,5,5,5" Margin="217,62,10,0" Height="73" SelectionChanged="cmbSinif_SelectionChanged" FontSize="48" VerticalAlignment="Top" MaxDropDownHeight="355"/>
+        <Image x:Name="dersProgramResim" Margin="10,180,10,10" Stretch="Fill" Source="images/bos.jpg"/>
+    </Grid>
+</UserControl>

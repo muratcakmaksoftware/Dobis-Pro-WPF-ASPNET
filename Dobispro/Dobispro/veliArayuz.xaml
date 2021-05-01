@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="Dobispro.veliArayuz"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Dobispro"
+             xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" 
+             mc:Ignorable="d" 
+             d:DesignHeight="768" d:DesignWidth="1024" Background="#FF47BD62">
+    <Grid>
+        <dxlc:Tile x:Name="geri" Width="150" Height="150"  Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" PreviewMouseDown="geri_PreviewMouseDown" >
+            <dxlc:Tile.Background>
+                <ImageBrush ImageSource="images/back.png"/>
+            </dxlc:Tile.Background>
+        </dxlc:Tile>
+        
+        <dxlc:Tile x:Name="ogrencinerede" Size="Large" FontSize="18" Width="400" Height="200" Header="Öğrenci Nerede"  Background="#FFB40D0D" Margin="-450,-250,0,0" HorizontalHeaderAlignment="Stretch" VerticalHeaderAlignment="Bottom" PreviewMouseDown="ogrencinerede_PreviewMouseDown" >
+            <Image Source="images/ogrenci.png" Width="200" Height="200" />
+        </dxlc:Tile>
+
+        <dxlc:Tile x:Name="dilekvesikayet" Size="Large" FontSize="18" Width="400" Height="200" Header="Dilek ve Şikayet"  Background="#FFB49D0D" Margin="450,-250,0,0" HorizontalHeaderAlignment="Stretch" VerticalHeaderAlignment="Bottom" PreviewMouseDown="dilekvesikayet_PreviewMouseDown" >
+            <Image Source="images/notebook.png" Width="200" Height="200"  />
+        </dxlc:Tile>
+
+        <dxlc:Tile x:Name="dersprogram" Size="Large" FontSize="18" Width="400" Height="200" Header="Ders Program"  Background="#FF0DB468" Margin="-450,250,0,0" HorizontalHeaderAlignment="Stretch" VerticalHeaderAlignment="Bottom" PreviewMouseDown="dersprogram_PreviewMouseDown" >
+            <Image Source="images/tablo.png" Width="200" Height="200" />
+        </dxlc:Tile>
+
+        <dxlc:Tile x:Name="idaribirimler" Size="Large" FontSize="18" Width="400" Height="200" Header="İdari Birimler"  Background="#FFB40D42" Margin="450,250,0,0" HorizontalHeaderAlignment="Stretch" VerticalHeaderAlignment="Bottom" PreviewMouseDown="idaribirimler_PreviewMouseDown" >
+            <Image Source="images/personel.png" Width="400" Height="200" />
+        </dxlc:Tile>
+        
+    </Grid>
+</UserControl>

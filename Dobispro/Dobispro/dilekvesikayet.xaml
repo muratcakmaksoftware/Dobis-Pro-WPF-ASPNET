@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="Dobispro.dilekvesikayet"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Dobispro"
+             xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" 
+             mc:Ignorable="d" 
+             d:DesignHeight="768" d:DesignWidth="1024" Background="#FF0E9155">
+    <Grid>
+        
+        <dxlc:Tile x:Name="geri" Width="150" Height="150"  Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" PreviewMouseDown="geri_PreviewMouseDown"   >
+            <dxlc:Tile.Background>
+                <ImageBrush ImageSource="images/back.png"/>
+            </dxlc:Tile.Background>
+        </dxlc:Tile>
+        <dxe:TextEdit Padding="5,5,5,5" x:Name="txtkonu" Height="80" Margin="12,166,12,522" FontSize="22" NullText="Konu Başlığı" PreviewMouseDown="txtkonu_PreviewMouseDown" VerticalAlignment="Top" EditValueChanged="txtkonu_EditValueChanged" />
+        <TextBox Margin="12,296,12,10" Padding="5,5,5,5" Name="txtmesaj" AcceptsReturn="True" TextWrapping="Wrap" FontSize="22" PreviewMouseDown="txtmesaj_PreviewMouseDown" />
+
+        <dxlc:Tile x:Name="gonder" Width="150" Height="150"  Margin="0,10,10,0" HorizontalAlignment="Right" VerticalAlignment="Top" Background="{x:Null}" PreviewMouseDown="gonder_PreviewMouseDown" >
+            <Image Source="images/gonder.png" Width="100" Height="100"/>
+        </dxlc:Tile>
+        <Label x:Name="label" Content="Mesajınız" HorizontalAlignment="Left" Margin="10,245,0,0" VerticalAlignment="Top" FontSize="29.333"/>
+        <local:Bildirim Margin="0,30,165,0" x:Name="bildirim1" VerticalAlignment="Top" Opacity="0" Height="100" HorizontalAlignment="Right" Width="290" />
+    </Grid>
+</UserControl>

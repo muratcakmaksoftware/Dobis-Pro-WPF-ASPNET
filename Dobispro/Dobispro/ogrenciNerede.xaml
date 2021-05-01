@@ -1,0 +1,89 @@
+﻿<UserControl x:Class="Dobispro.ogrenciNerede"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" 
+             xmlns:local="clr-namespace:Dobispro"
+             mc:Ignorable="d" 
+             d:DesignHeight="768" d:DesignWidth="1024" Background="White" >
+
+    <UserControl.Resources>
+        <!-- DataGrid style -->
+        <Style x:Key="DataGridStyle1" TargetType="{x:Type DataGrid}">
+            <Setter Property="ColumnHeaderStyle" Value="{DynamicResource ColumnHeaderStyle1}"/>
+            <Setter Property="RowStyle"  Value="{DynamicResource RowStyle1}"/>
+            <Setter Property="CellStyle"  Value="{DynamicResource cellortala}"/>
+            <Setter Property="RowHeaderStyle"  Value="{DynamicResource RowStyle2}"/>
+        </Style>
+        <!-- DataGridColumnHeader style -->
+        <Style x:Key="ColumnHeaderStyle1" TargetType="DataGridColumnHeader">
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Background" Value="LightBlue"/>
+            <Setter Property="Foreground" Value="Blue"/>
+            <Setter Property="HorizontalContentAlignment"  Value="Center" />
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="BorderBrush" Value="LightBlue" />
+            <Setter Property="BorderThickness" Value="2" />
+            <Setter Property="FontWeight"  Value="Bold" />
+        </Style>
+        <!-- Rows stil -->
+        <Style x:Key="RowStyle1" TargetType="DataGridRow">
+            <!--BorderThickness="2" BorderBrush="#FFB72121"-->
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontSize" Value="25" />
+            <Setter Property="BorderBrush" Value="#EEEEEEEE" />
+            <Setter Property="BorderThickness" Value="2" />
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <!--Setter Property="ToolTip" Value="Dokunun"/-->
+                    <Setter Property="BorderBrush" Value="#FFB72121" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="RowStyle2" TargetType="DataGridRowHeader">
+            <Setter Property="BorderBrush" Value="Red"/>
+        </Style>
+        <Style x:Key="cellortala" TargetType="DataGridCell">
+            <Setter Property="HorizontalContentAlignment"  Value="Center" />
+            <!--Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" /-->
+        </Style>
+        <Style x:Key="Body_Content_DataGrid_Centering"
+	 TargetType="{x:Type DataGridCell}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type DataGridCell}">
+                        <Grid Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid Background="White">
+        <dxlc:Tile x:Name="geri" Width="100" Height="100"  Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" PreviewMouseDown="geri_PreviewMouseDown">
+            <dxlc:Tile.Background>
+                <ImageBrush ImageSource="images/back.png"/>
+            </dxlc:Tile.Background>
+        </dxlc:Tile>
+        <dxe:TextEdit x:Name="txtarama" Padding="5,5,5,5"  Margin="128,23,0,0" TextWrapping="Wrap" Width="502" Height="80"  FontSize="36" NullText="İsim, Okul No, T.C NO" VerticalAlignment="Top" PreviewMouseDown="txtarama_PreviewMouseDown" VerticalContentAlignment="Center" HorizontalAlignment="Left" EditValueChanged="txtarama_EditValueChanged" />
+        <dxlc:Tile x:Name="arama" Size="Small" FontSize="18" Margin="635,23,0,0" HorizontalHeaderAlignment="Stretch" VerticalHeaderAlignment="Bottom" Background="{x:Null}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="80" Width="86" PreviewMouseDown="arama_PreviewMouseDown"  >
+            <Image Source="images/arama.png" Width="75" Height="75" />
+        </dxlc:Tile>
+
+        <Label x:Name="lblAdi" Content="İsim:" Margin="10,380,0,0" FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Label x:Name="lblokulNo" Content="Okul No:" Margin="10,514,0,0" FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        <Label x:Name="lblsinif" Content="Sınıf:" Margin="10,445,0,0" FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Image x:Name="imgKimlik" Margin="10,136,0,0" Stretch="Fill" Width="229" Height="212" Source="images/kim.png" HorizontalAlignment="Left" VerticalAlignment="Top" />
+
+        <DataGrid x:Name="dataGridView1" Margin="272,136,0,58" Width="370" SelectionChanged="dataGridView1_SelectionChanged" FrozenColumnCount="1" HorizontalGridLinesBrush="{x:Null}" VerticalGridLinesBrush="{x:Null}" SelectionMode="Single" CanUserResizeColumns="False" IsReadOnly="True" CanUserReorderColumns="False" CanUserAddRows="False" Background="#FFE2E2E2" Style="{DynamicResource DataGridStyle1}" RowBackground="White" EnableRowVirtualization="False" CellStyle="{StaticResource Body_Content_DataGrid_Centering}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" AlternatingRowBackground="#FF938E8E" GridLinesVisibility="None" HorizontalAlignment="Left"/>
+        <Image x:Name="bolgeResim" Margin="650,136,0,58"  Stretch="Fill" Source="images/bos.jpg" Width="370" HorizontalAlignment="Left"/>
+
+        <Label x:Name="lblbilgi" Content="Bilgi :" Margin="0,0,0,20" FontSize="24" FontWeight="Bold" Foreground="#FF1E7BD8" HorizontalAlignment="Left" VerticalAlignment="Bottom" />
+        <local:Bildirim Margin="0,3,4,0" x:Name="bildirim1" VerticalAlignment="Top" Opacity="0" Height="100" HorizontalAlignment="Right" Width="290" Background="Black" />
+    </Grid>
+</UserControl>

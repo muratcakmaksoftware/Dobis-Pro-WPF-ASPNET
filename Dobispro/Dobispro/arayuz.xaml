@@ -1,0 +1,20 @@
+﻿<UserControl   x:Class="Dobispro.arayuz"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" 
+             xmlns:local="clr-namespace:Dobispro"
+             mc:Ignorable="d" 
+            d:DesignHeight="768" d:DesignWidth="1024"
+               >
+    <Grid Background="#FF40F9F9">
+        <dxlc:Tile x:Name="ogrenci" Size="Large" FontSize="18" Width="400" Height="200" Header="Öğrenci"  Background="#FF0DB44A" Margin="0,-250,0,0" HorizontalHeaderAlignment="Stretch" VerticalHeaderAlignment="Bottom" PreviewMouseDown="ogrenci_PreviewMouseDown" PreviewTouchDown="ogrenci_PreviewTouchDown">
+            <Image Source="images/ogrenci.png" Width="200" Height="200" />
+        </dxlc:Tile>
+
+        <dxlc:Tile x:Name="veli" Size="Large" FontSize="18" Width="400" Height="200" Header="Veli" Background="#FF0D9DB4" Margin="0,250,0,0" HorizontalHeaderAlignment="Stretch" VerticalHeaderAlignment="Bottom" PreviewMouseDown="veli_PreviewMouseDown">
+            <Image Source="images/aile_icon.png" Width="200" Height="200" />
+        </dxlc:Tile>
+    </Grid>
+</UserControl>
